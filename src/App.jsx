@@ -346,10 +346,12 @@ function App() {
   };
 
   const skills = {
-    'Programming Languages': ['Python', 'C++', 'C', 'Java', 'JavaScript'],
-    'Web Development': ['React', 'Node.js', 'FastAPI', 'Flask', 'HTML', 'CSS', 'RestAPI'],
-    'Machine Learning & AI': ['TensorFlow', 'Keras', 'OpenCV', 'NumPy', 'Pandas', 'scikit-learn'],
-    'Databases & Tools': ['PostgreSQL', 'SQL', 'Matplotlib', 'Tkinter']
+    'Programming Languages': ['Python', 'C++', 'C', 'Java', 'JavaScript', 'TypeScript'],
+    'Web Development': ['HTML', 'CSS', 'Tailwind CSS', 'React.js'],
+    'Backend and APIs': ['Node.js', 'FastAPI', 'Flask', 'RESTful APIs'],
+    'Databases': ['PostgreSQL', 'MySQL', 'Supabase'],
+    'Machine Learning & AI': ['TensorFlow', 'Keras', 'Scikit-learn', 'OpenCV', 'XGBoost', 'Pandas', 'NumPy', 'YOLO', 'ResNet', 'SVM'],
+    'Version Control': ['Git', 'GitHub', 'Jira'],
   };
 
   const projects = [
@@ -358,42 +360,40 @@ function App() {
       duration: '07/24 - 11/24',
       description: 'Real-time sign language recognition system using deep learning',
       details: [
-        'Integrated real-time video feed processing using OpenCV, enabling instant gesture recognition through webcam input',
-        'Performed data augmentation (rotation, flipping, brightness shift) to improve model generalization and reduce overfitting',
-        'Designed and trained a 3-layer Convolutional Neural Network (CNN) using TensorFlow and Keras for real-time sign language recognition across four gestures (hello, thanks, yes and no)',
-        'Achieved 85% classification accuracy using optimized convolutional blocks and ReLU activation'
+        'Created a real-time sign language recognition system using a 3-layer CNN (TensorFlow, Keras), achieving 85% accuracy across four gestures.',
+        'Built and annotated a custom dataset of 280 images and applied OpenCV preprocessing to enhance model performance.',
+        'Trained and validated the 3-layer CNN using an 80/20 data split, enabling real-time classification of 4 sign language gestures with live webcam inference.',
       ],
       github: 'https://github.com/YaminiShankari/Sign-language-interpreter',
-      stats: { accuracy: 85, gestures: 4, models: 3 }
+      stats: { accuracy: '85', gestures: 4, models: 3 }
     },
     {
       title: "Rubik's Cube Solver",
       duration: '04/25 - 07/25',
       description: 'Automated Rubik\'s Cube color recognition and solution generation',
       details: [
-        'Developed a machine learning pipeline using Python, OpenCV, and scikit-learn to automate Rubik\'s Cube color recognition and solution generation',
-        'Trained an SVM (RBF kernel) model with combined HSV + LAB features, achieving 96.09% test accuracy for precise color classification',
-        'Integrated Kociemba two-phase algorithm to compute the optimal cube-solving sequence with minimal moves',
-        'Developed a Flask-based interface to visualize cube state input and display the final solution sequence step-by-step'
+        'Implemented an ML-powered Rubik’s Cube solver using an SVM with RBF kernel to classify cube colors from real-time webcam input across all 6 faces.',
+        'Employed OpenCV-based image preprocessing and ROI-based color detection, achieving 96.09% test accuracy for cube-color classification across 6 color classes.',
+        'Integrated Kociemba’s two-phase solving algorithm with a Flask REST API and React+Vite interface to generate and visualize step-by-step cube solutions.',
       ],
       github: 'https://github.com/YaminiShankari/Rubik-s-cube-solver',
-      stats: { accuracy: 96, colors: 6, algorithm: 2 }
+      stats: { accuracy: '96.09', colors: 6, algorithm: 2 }
     },
     {
-      title: 'Lung Nodule Detection',
-      duration: '02/25 - Present',
-      description: 'Hybrid ML-DL model for lung nodule detection in CT scans',
+      title: 'Smart Traffic Surveillance System',
+      duration: '05/26 - 07/26',
+      description: 'AI-powered Smart Traffic Surveillance System for real-time vehicle detection and traffic management',
       details: [
-        'Leveraging pre-trained ResNet-18 as a feature extractor to generate deep representations from CT scan images, enabling rich semantic feature capture without training from scratch',
-        'Applying Logistic Regression for binary classification on top of extracted features, creating a lightweight and interpretable hybrid ML-DL pipeline',
-        'Focused on early detection of lung nodules from medical CT scans, contributing towards computer-aided diagnosis systems'
+        'Constructed an AI-powered ANPR system using YOLOv8 and EasyOCR, achieving 92% plate detection and 87% OCR accuracy.',
+        'Engineered a Flask Supabase PostgreSQL verification pipeline that cross-references recognized plates against 9 vehicle attributes and performs stolen, suspicious-plate, and violation checks.',
+        'Automated the enforcement workflow from plate recognition to database verification and PDF challan generation, processing each image in an average of 240 ms through the end-to-end pipeline.'
       ],
-      github: 'https://github.com/YaminiShankari/lung-nodule-detection',
-      stats: { model: 'ResNet-18', type: 'Hybrid', status: 'Ongoing' },
+      github: 'https://github.com/YaminiShankari/Smart-Traffic-Surveillance-System',
+      stats: {accuracy: '92', models: 3},
       isOngoing: true,
       images: [
-        { src: 'src/assets/project3/lung-home.png', alt: 'Lung Nodule Detection - Home' },
-        { src: 'src/assets/project3/lung-result.png', alt: 'Lung Nodule Detection - Result' },
+        { src: 'public/images/project3/home_page.jpg', alt: 'Smart Traffic Surveillance System - Home' },
+        { src: 'public/images/project3/main_page.png', alt: 'Smart Traffic Surveillance System - Result' },
       ]
     },
   ];
@@ -402,7 +402,7 @@ function App() {
     {
       title: 'Competitive Programming',
       description: 'Actively practiced Data Structures and Algorithms through competitive programming, enhancing problem-solving speed and logical reasoning',
-      count: 50,
+      count: 500,
       suffix: '+ Problems'
     },
     {
@@ -557,6 +557,7 @@ function App() {
                     <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Bachelor of Technology</h4>
                     <p className="text-gray-700 dark:text-gray-300 mb-1">SRM Institute of Science and Technology, Ramapuram</p>
                     <p className="text-gray-600 dark:text-gray-400 mb-3">August 2023 - May 2027</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-3">CGPA: 9.17/10</p>
                     <p className="text-gray-700 dark:text-gray-300">
                       Specializing in Computer Science with focus on Artificial Intelligence, Machine Learning, 
                       and Software Development. Active in competitive programming and technical content creation.
@@ -570,8 +571,9 @@ function App() {
                     <div className="space-y-3">
                       {[
                         { lang: 'English', level: 'Proficient', percent: 95 },
-                        { lang: 'Tamil', level: 'Native', percent: 100 },
-                        { lang: 'German', level: 'Beginner', percent: 40 }
+                        { lang: 'German', level: 'Novice', percent: 20 },
+                        { lang: 'Hindi', level: 'Beginner', percent: 40 },
+                        { lang: 'Tamil', level: 'Native', percent: 100 }
                       ].map((item, idx) => (
                         <div key={idx} className="bg-white/50 dark:bg-gray-600/50 p-4 rounded-lg">
                           <div className="flex justify-between mb-2">
@@ -601,11 +603,11 @@ function App() {
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                     With hands-on experience in machine learning, deep learning, and full-stack development, 
-                    I've worked on projects ranging from sign language interpretation systems to automated 
-                    Rubik's Cube solvers, combining computer vision and AI to solve complex problems.
+                    I've worked on projects ranging from automated Rubik's Cube solvers to Smart Traffic Surveillance 
+                    Systems, combining computer vision and AI to solve complex problems.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Beyond coding, I'm an active competitive programmer, German language content creator, 
+                    Beyond coding, I'm an active competitive programmer, German language content creator 
                     and former Games Captain, bringing leadership and creativity to everything I do.
                   </p>
                 </div>
@@ -681,10 +683,10 @@ function App() {
       <div className="relative w-full h-64 overflow-hidden">
         <div className="flex w-full h-full">
           <div className="w-1/2 h-full overflow-hidden">
-            <img src="/project3/lung-home.png" alt="Lung Nodule Detection - Home" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+            <img src="/project3/home_page.jpg" alt="Smart Traffic Surveillance System - Home" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="w-1/2 h-full overflow-hidden">
-            <img src="/project3/lung-result.png" alt="Lung Nodule Detection - Result" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+            <img src="/project3/main_page.png" alt="Smart Traffic Surveillance System - Result" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
           </div>
         </div>
       </div>
@@ -693,11 +695,6 @@ function App() {
       <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
         <div className="flex items-center gap-3 flex-wrap">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
-          {project.isOngoing && (
-            <span className="px-3 py-1 text-xs font-semibold bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full animate-pulse">
-              🟢 Ongoing
-            </span>
-          )}
         </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600 dark:text-gray-400">{project.duration}</span>
